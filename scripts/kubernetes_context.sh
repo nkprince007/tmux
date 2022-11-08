@@ -44,7 +44,7 @@ main() {
   if [ "$label" = "" ]; then
     echo "${OUTPUT_STRING}"
   else
-    echo "<${label}> ${OUTPUT_STRING}"
+    echo "${label} ${OUTPUT_STRING}"
   fi
 
   sleep $RATE
