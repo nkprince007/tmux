@@ -1,12 +1,11 @@
 #!/usr/bin/env bash
 
-INTERVAL="1"  # update interval in seconds
+INTERVAL="1" # update interval in seconds
 
 network_name=$(tmux show-option -gqv "@dracula-network-bandwidth")
 
 main() {
-  while true
-  do
+  while true; do
     output_download=""
     output_upload=""
     output_download_unit=""
