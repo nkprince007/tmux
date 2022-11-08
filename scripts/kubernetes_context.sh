@@ -17,10 +17,6 @@ main()
   # storing the refresh rate in the variable RATE, default is 5
   RATE=$(get_tmux_option "@dracula-refresh-rate" 5)
   OUTPUT_STRING=""
-  if [ ! -z "$current_user" ]
-  then
-    OUTPUT_STRING="${current_user}@"
-  fi
 
   if [ ! -z "$current_cluster" ]
   then
@@ -29,7 +25,7 @@ main()
 
   if [ ! -z "$current_namespace" ]
   then
-    OUTPUT_STRING="${OUTPUT_STRING}:${current_namespace}"
+    OUTPUT_STRING="${OUTPUT_STRING}@${current_namespace}"
   fi
 
   if [ "$OUTPUT_STRING" = "" ]
@@ -41,7 +37,7 @@ main()
   then
     echo "${OUTPUT_STRING}"
   else
-    echo "${label} ${OUTPUT_STRING}"
+    echo "<${label}> ${OUTPUT_STRING}"
   fi
 
   sleep $RATE
